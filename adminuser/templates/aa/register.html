@@ -1,0 +1,147 @@
+{% load static %}
+ 
+<!DOCTYPE html>
+<html class=''>
+<head>
+
+<style class="cp-pen-styles">html, body {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+ 
+body {
+  background: rgb(15, 15, 15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  
+}
+ 
+form {
+  background: white;
+  width: 40%;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  font-family: lato;
+  position: relative;
+  color: #333;
+  border-radius: 10px;
+}
+form header {
+  background: #045001;
+  padding: 30px 20px;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  border-radius: 10px 10px 0 0;
+}
+form label {
+  margin-left: 20px;
+  display: inline-block;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  position: relative;
+}
+form label span {
+  color: #FF3838;
+  font-size: 2em;
+  position: absolute;
+  left: 2.3em;
+  top: -10px;
+}
+form input {
+  display: block;
+  width: 78%;
+  margin-left: 20px;
+  padding: 5px 20px;
+  font-size: 1em;
+  border-radius: 3px;
+  outline: none;
+  border: 1px solid #ccc;
+}
+form .help {
+  margin-left: 20px;
+  font-size: 0.8em;
+  color: #777;
+}
+form .signup {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-family: inherit;
+  color: white;
+  background: #0f0f0f;
+  outline: none;
+  border: none;
+  padding: 5px 15px;
+  font-size: 1.3em;
+  font-weight: 400;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px rgba(51, 51, 51, 0.4);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+form button:hover {
+  background: #ff5252;
+}
+form .adminpanel {
+  display: flex;
+  align-self: auto;
+  margin-left: 0%;
+}
+form .bottombar{
+  margin-left: 35%;
+  margin-top: 0;
+  font-size: large;
+  font-weight: bold;
+ 
+}
+</style>
+</head>
+ 
+<body>
+ 
+<form method="post" action="register">
+ {% csrf_token %}  
+ 
+  <header>Register yourself</header>
+  <label>First name <span>*</span></label>
+  <input type="text"   name="first_name"  placeholder="First name" required="" />
+  
+  <label>Last name <span>*</span></label>
+  <input type="text"   name="last_name"  placeholder="Last name" required="" />
+
+  <label>Username <span>*</span></label>
+  <input type="text"   name="username"  placeholder="Username" required="" />
+  
+
+  <label>Email <span>*</span></label>
+  <input type="email"   name="email"  placeholder="Email" required="" />
+
+  <label>Password <span>*</span></label>
+  <input type="password"  name="password" placeholder="Password" required="" />
+
+
+  <div class="adminpanel">
+  </label><input type="checkbox" id="myCheck" name="admin">
+  <button onclick="check()">Click if Admin</button> 
+  </div>
+
+  <button class="signup" type="submit">Sign up</button>
+
+  <div class="bottombar">
+  <label>Already user </label>
+  <a href="login">Log in</a>
+  </div>
+
+<script>
+  function check() {
+    document.getElementById("myCheck").checked = true;
+}
+</script> 
+</body>
+</html>

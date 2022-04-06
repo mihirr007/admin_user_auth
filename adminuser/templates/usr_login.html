@@ -1,0 +1,95 @@
+{% extends "ubase.html" %} {% load crispy_forms_tags %} {% load static %} 
+{%block content %}
+<div class="mt-5">
+  <center>
+    <img src="{% static 'images/110.png' %}" width="310" height="240" />
+  </center>
+</div>
+
+<!-- <form class="w-25 align-self-center " action="" method="post" autocomplete="off">    
+            {% csrf_token %}
+            {{form|crispy}} 
+        <div class="container mt-4 ">
+            <div class="row">
+            <div class="col text-center">
+                <button href="{% url 'login' %}" type="submit" class="btn btn-secondary "><i class="fa-solid fa-paper-plane me-2"></i>Login</button>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col text-center mt-3">
+                <a href="" class="btn btn-primary "> <i class="fa fa-user-plus me-2" aria-hidden="true"></i>New User</a> 
+            </div>  
+            </div>
+        </div>
+        </div>
+    </div>
+</form> -->
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-5">
+          <div class="login-wrap p-4 p-md-5">
+            <div class="d-flex">
+              <div class="w-100">
+                <h3 class="mt-0 text-center">Login</h3>
+              </div>
+            </div>
+
+            {% for message in messages %}
+                    
+                    <div class="alert alert-danger mt-1 mb-1">
+                        <a class="close font-weight-bold"  data-dismiss="alert">×</a>
+                          {{ message }}
+                    </div>
+
+            {% endfor %}
+
+
+            <form class="signin-form" action="" method="post">
+              <div class="form-group mt-3">
+                <!-- <input type="text" class="form-control" required> -->
+                <!-- <label class="form-control-placeholder" for="username">Username</label> -->
+
+                {% csrf_token %} <b>{{form|crispy}}</b>
+              </div>
+              <div class="form-group">
+                <!-- <input id="password-field" type="password" class="form-control" required> -->
+                <!-- <label class="form-control-placeholder" for="password">Password</label> -->
+              </div>
+              <div class="form-group mt-4">
+                <button
+                  type="submit"
+                  class="form-control btn btn-primary rounded submit px-3"
+                >{% csrf_token %}
+                  Log In
+                </button>
+              </div>
+
+              
+
+
+              <div class="form-group d-md-flex mt-3">
+                <div class="w-50 text-left">
+                  <label class="checkbox-wrap checkbox-primary mb-0"
+                    >Remember Me
+                    <input type="checkbox" checked />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>{% csrf_token %}
+                <div class="w-50 text-md-right">
+                  <a href="#">Forgot Password</a>
+                </div>
+              </div>
+            </form>
+            <!-- <p class="text-center mt-4">
+              Not a member? <a  href="register">Sign Up</a>
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,207 @@
+{% extends "ubase.html" %} {% load crispy_forms_tags %} {% load static %} 
+{% block content %}
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+  <!-- Container wrapper -->
+  
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Navbar brand -->
+
+      <a class="navbar-brand mt-2 mt-lg-0 ms-5 text-light" href="#">
+        <h2>RegisTree<i class="fa fa-tree " style="color: rgb(6, 185, 6);"></i></h2>
+
+      </a>
+      
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
+        <li class=" ms-2 me-3">
+          <a class="nav-link text-light " href="#"><span class="fa fa-dashboard"></span> Home</a>
+        </li>
+
+        <div class="dropdown mt-2">
+          <a
+          class="authenticdrop me-4 text-light "
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+          style="text-decoration:none"
+        >
+          <span class="fa fa-user-check" ></span> Authentication <i class="fa fa-angle-down"></i>
+        </a>
+          
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#"><i class="bi bi-key"></i> &nbsp Recover Password</a>
+            <a class="dropdown-item" href="#"><i class="bi bi-fullscreen"></i> &nbsp Full Screen</a>
+          </div>
+        </div>
+        
+        
+      </ul>
+      <!-- Left links -->
+    </div>
+    <!-- Collapsible wrapper -->
+    <div>
+      <form class="input-group w-auto my-auto d-none d-sm-flex me-3">
+        <input
+          autocomplete="off"
+          type="search"
+          class="form-control rounded"
+          placeholder="Search"
+          style="min-width: 125px;"
+        />
+        <span class="input-group-text border-0 d-none d-lg-flex bg-dark" ><a href="#" class="fa fa-search"></a
+        ></span>
+      </form>
+    </div>
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center me-5">
+      <!-- Icon -->
+      
+     
+
+      <!-- Notifications -->
+      <div class="dropdown">
+        <a
+          class="text-reset me-4  "
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+
+          <span class="fa fa-bell fa-lg" ></span>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end "
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+        <h6 class="dropdown-header">Notifications </h6>
+          <div class="notification-list notification-list--unread">
+              <div class="notification-list_img">
+                  <img class="align-center" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(30).jpg" alt="user">
+              </div>
+              <div class="notification-list_detail">
+                <a  class="badge badge-danger text-light">New</a>
+                  <p><b>Jesica McCartney</b> reacted to your post </p>
+                  <p><small> <span class="fa fa-clock">  &nbsp </span> 10 mins ago</small></p>
+              </div>  
+          </div>
+
+          <div class="dropdown-divider"></div>
+
+          <div class="notification-list notification-list--unread">
+              <div class="notification-list_img">
+                  <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(29).jpg" alt="user">
+              </div>
+              <div class="notification-list_detail">
+                  <p><b>Dane Miles</b> replied to your message</p>
+                  <p><small> <span class="fa fa-clock">  &nbsp </span>1 day ago</small></p>
+              </div>
+          </div>  
+          
+          
+        
+          
+      </div>
+      <!-- Avatar -->
+      <div class="dropdown me-5 " name="profiles" style="width: 50px !important; min-width: 50px; max-width: 50px">
+        <a
+          class=" d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <img
+            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+            class="rounded-circle"
+            height="35"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuAvatar"
+        >
+          <li>
+            <a class="dropdown-item" href="#"> <i class="bi bi-person-bounding-box"></i>&nbsp My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#"> <i class="bi bi-gear"></i>&nbsp Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="logout"> <i class="bi bi-box-arrow-right"></i>&nbsp Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right elements -->
+  
+  <!-- Container wrapper rgb(88, 121, 190)   width="310" height="240" -->
+
+</nav>
+
+<div class="mt-5">
+  <center>
+    <img src="{% static 'images/66.png' %}" width="310" height="240" />
+  </center>
+</div>
+
+<div class="h-100 d-flex justify-content-center"></div>
+
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-5">
+          <div class="login-wrap p-4 p-md-5">
+            <div class="d-flex">
+              <div class="w-100">
+                <h3 class="mt-0 text-center">Update Password</h3>
+              </div>
+            </div>
+            <form class="signin-form" action="pschnge" method="post">
+              <div class="form-group  mt-3">
+                <!-- <input type="text" class="form-control" required> -->
+                <!-- <label class="form-control-placeholder" for="username">Username</label> -->
+
+                {% csrf_token %} 
+                <label class="ms-5 ps-3" for="id_subject">&nbsp Username:</label><br>
+                <b class=" d-flex justify-content-center">{{form.username}} </b> <br>
+                
+                <label class="ms-5 ps-3" for="id_subject">&nbsp New Password:</label><br>
+                <b class="pass  d-flex justify-content-center">{{form.password}} </b>
+              </div>
+              <div class="form-group">
+                <!-- <input id="password-field" type="password" class="form-control" required> -->
+                <!-- <label class="form-control-placeholder" for="password">Password</label> -->
+              </div>
+              <div class="form-group mt-4 ms-5 ">
+                <button
+                  type="submit"
+                  class="form-control ms-5 btn btn-primary rounded submit" 
+                  style="width: 50%;"
+                >
+                  Save
+                </button>
+              </div>
+              
+            </form>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fjalla+One&family=Poppins:ital,wght@1,300&display=swap');
+body  
+{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#000000e5;  
+    font-family: 'Poppins', sans-serif;  
+}  
+
+.login{  
+        width: 310px;  
+        overflow: hidden;  
+        margin: auto;  
+        margin: 20 0 0 450px;  
+        padding: 75px;  
+        background: #2b2b2be5;  
+        border-radius: 20px ;  
+        shape-outside: margin-box;
+        box-shadow: 0 0 6px 3px rgb(77, 73, 73);
+}  
+h2{  
+    font-family: 'Fjalla One', sans-serif;
+    font-size: xx-large;
+    text-align: center;  
+    color: #68e4fa;  
+    padding: 30px;  
+}  
+label{  
+    color: #00ffbf;  
+    font-size: 17px;  
+    margin-top: 5%;
+    
+}  
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+    margin: auto;
+    margin-bottom: 5%;
+}  
+#Pass{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+    margin-bottom: 5%;  
+}  
+
+#admin {
+  margin-left: 25%;
+}
+
+
+#log{  
+    width: 200px;  
+    height: 35px;  
+    margin-left: 17%;
+    font-weight: bold;
+    font-size: medium;
+    border: none;  
+    border-radius: 20px;  
+    padding-left: 7px;  
+    color: blue;  
+    margin-top: 24px;
+  
+  
+}  
+b.pass{
+    max-width: 100%;
+}

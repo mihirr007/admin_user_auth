@@ -1,0 +1,418 @@
+{% extends "ubase.html" %} 
+ 
+{% load static %} 
+{% block content %}
+
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
+    <!-- Container wrapper -->
+    
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar brand -->
+
+        <a class="navbar-brand mt-2 mt-lg-0 ms-5 text-light" href="#">
+          <h2>RegisTree<i class="fa fa-tree " style="color: rgb(6, 185, 6);"></i></h2>
+
+        </a>
+        
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 ms-4 mb-lg-0">
+          <li class=" ms-2 me-3">
+            <a class="nav-link text-light " href="#"><span class="fa fa-dashboard"></span> Dashboard</a>
+          </li>
+
+          <div class="dropdown mt-2">
+            <a
+            class="authenticdrop me-4 text-light "
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+            style="text-decoration:none"
+          >
+            <span class="fa fa-user-check" ></span> Authentication <i class="fa fa-angle-down"></i>
+          </a>
+            
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              
+              <a class="dropdown-item" href="register"> <i class="bi bi-plus-square"></i> &nbsp Add user</a>
+              <a class="dropdown-item" href="#"><i class="bi bi-key"></i> &nbsp Recover Password</a>
+              <a class="dropdown-item" href="#"><i class="bi bi-fullscreen"></i> &nbsp Full Screen</a>
+            </div>
+          </div>
+          
+          
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+      <div>
+        <form class="input-group w-auto my-auto d-none d-sm-flex me-3">
+          <input
+            autocomplete="off"
+            type="search"
+            class="form-control rounded"
+            placeholder="Search"
+            style="min-width: 125px;"
+          />
+          <span class="input-group-text border-0 d-none d-lg-flex bg-dark" ><a href="#" class="fa fa-search"></a
+          ></span>
+        </form>
+      </div>
+
+      <!-- Right elements -->
+      <div class="d-flex align-items-center me-5">
+        <!-- Icon -->
+        
+      
+
+        <!-- Notifications -->
+        <div class="dropdown">
+          <a
+            class="text-reset me-4  "
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+
+            <span class="fa fa-bell fa-lg" ></span>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end "
+            aria-labelledby="navbarDropdownMenuLink"
+          >
+          <h6 class="dropdown-header">Notifications </h6>
+            <div class="notification-list notification-list--unread">
+                <div class="notification-list_img">
+                    <img class="align-center" src="https://i.imgur.com/zYxDCQT.jpg" alt="user">
+                </div>
+                <div class="notification-list_detail">
+                  <a  class="badge badge-danger text-light">New</a>
+                    <p><b>John McCartney</b> reacted to your post </p>
+                    <p><small> <span class="bi bi-clock-history"></span> 10 mins ago</small></p>
+                </div>  
+            </div>
+
+            <div class="dropdown-divider"></div>
+
+            <div class="notification-list notification-list--unread">
+                <div class="notification-list_img">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.webp" alt="user">
+                </div>
+                <div class="notification-list_detail">
+                    <p><b>Richard Miles</b> replied to your message</p>
+                    <p><small> <span class="bi bi-clock-history">   </span>1 day ago</small></p>
+                </div>
+            </div>  
+            
+            
+            {% csrf_token %}
+            
+        </div>
+        <!-- Avatar -->
+        <div class="dropdown me-5 " name="profiles" style="width: 50px !important; min-width: 50px; max-width: 50px">
+          <a
+            class=" d-flex align-items-center hidden-arrow"
+            href="#"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+              class="rounded-circle"
+              height="35"
+              alt="Black and White Portrait of a Man"
+              loading="lazy"
+            />
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="navbarDropdownMenuAvatar"
+          >
+            <li>
+              <a class="dropdown-item" href="#"> <i class="bi bi-person-bounding-box"></i>&nbsp My profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#"> <i class="bi bi-gear"></i>&nbsp Settings</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="logout"> <i class="bi bi-box-arrow-right"></i>&nbsp Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Right elements -->
+    
+    <!-- Container wrapper rgb(88, 121, 190)   width="310" height="240" -->
+
+  </nav>
+
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+  <!-- &&&&&&&&&&&&&&&&&&&&&& -->
+
+  <!-- Navbar -->
+
+
+  <div>
+    <p class="h4 ps-5 mt-3 mb-3 "> Welcome !</p>
+
+  <section>
+
+  <div class="row me-0">
+    <div class="col-xl-4 ms-5 " >
+        <div class="rounded shadow-lg" style="background-color: rgb(90, 121, 187); max-height: 500px">
+            <div class="card-body">
+                <div class="text-center py-3">
+                    
+                  <div class="main-wid position-relative">
+                        <h3 class="text-white ">RegisTree Dashboard</h3>
+
+                        <h3 class="text-white m-3"> Welcome Back!</h3>
+
+                        <p class="text-white-50 px-3 mt-4 ">Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien libero tincidunt.</p>
+                        
+                        <div class="pt-2 ">
+                            <a href="" class="btn btn-success">View Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
+                        </div>
+                  </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="rounded col-xl-7 ms-3 me-4">
+      <div class="row " >
+        <div class="card shadow-lg" style="background-color: rgba(140, 184, 199, 0.842);">
+          <div class="card-body" >
+            <div class=" row boxlayout">
+              <div class=" col-md-6">
+                <img src="{% static 'images/iisvg.svg' %}" width="300" height="247" />
+
+              </div>
+              <div class=" col-md-5">
+
+                <div class="col-md-10 rounded ">
+                  <div class="card" style="background-color: rgba(8, 131, 45, 0.801);">
+                    <div class="card-content">
+                      <div class="card-body">
+                          <div class="media-body text-left text-light">
+                            
+                              <h3 class="success">156</h3>
+                              <span> New Users &nbsp &nbsp </span>
+                            
+                            <i class="fa fa-address-book fa-2x"></i>
+                          </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-11 rounded mt-2 ms-5">
+                  <div class="card" style="background-color: rgb(4, 118, 138);">
+                    <div class="card-content">
+                      <div class="card-body">
+                        
+                          <div class="media-body text-left text-light">
+                            <h3 class="primary">423</h3>
+                            <span>Total Operations &nbsp <i class="fa fa-gears fa-2x"></i></span>
+                          </div>
+                          
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+
+  </section>
+
+
+  <!-- ###################### -->
+
+  <!-- ###################### -->
+
+  <section>
+  <div class="container"  >
+  <!-- <div class="col-md-12 column"> -->
+    <table  class="table shadow-lg align-middle table-rounded bg-white mt-5"  >
+      <thead class="bg-dark text-light">
+        
+        <th>&nbsp</th> 
+        <th><h3 class="me-0">User List</h3></th> 
+        <th>&nbsp</th> 
+        <th>&nbsp</th> 
+        <th>&nbsp</th> 
+        <th><a href="{% url 'register'%}" class="btn btn-outline-light">
+          <i class="fas fa-plus "></i> Add 
+          </a>
+        </th> 
+        
+        
+      </thead>
+      <thead class="bg-light me-3">
+        
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Position</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        
+        {% for user in user_list %}
+          <tr>
+            <td>
+              {{user.id}}
+            </td>
+            <td>
+              <div class="d-flex align-items-center">
+                <img
+                    src="{% static 'images/7070.jpg' %}"
+                    alt=""
+                    style="width: 45px; height: 45px"
+                    class="rounded-circle"
+                    />
+                <div class="ms-3">
+                  <p class="fw-bold mb-1">{{user.first_name}} {{user.last_name}}</p>
+                  <p class="text-muted mb-0">{{user.email}}</p>
+                </div>
+              </div>
+            </td>
+            <td>
+              <p class="fw-normal mb-1">{{user.username}}</p>
+              <!-- <p class="text-muted mb-0">IT department</p> -->
+            </td>
+            <td>
+              {%if 'User' == user.position%}
+                  <span class="badge badge-success rounded-pill">{{user.position}}</span>
+              {% else %}
+                  <span class="badge badge-warning rounded-pill">{{user.position}}</span>
+              {% endif %}
+              
+            </td>
+            <!-- <td>Senior</td> -->
+            <td>
+              <a href="{% url 'update' user.id %}" class="btn">
+                <i class="far fa-edit fa-lg text-success"></i>
+                </a>
+            </td>
+            <td>
+              <form
+              action="{% url 'delete' user.id %}"
+              method="post"
+              class="d-inline"
+              >
+              {% csrf_token %}
+              <button class="btn">
+                  <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+              </button>
+              </form>
+            </td>
+            
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  </div>  
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ########################### -->
+    
+  <!-- <div class="container ">
+      
+      <table class="table shadow-lg  mb-5 mt-3 ">
+      <thead class="font-weight-bold bg-dark text-white ms-2">
+          <tr class="text-center">
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>username</td>
+          <td>Email</td>
+          <td>Position</td>
+          <td>
+              <a href="{% url 'register'%}" class="btn btn-outline-success">
+              <i class="fas fa-plus"></i> Add
+              </a>
+          </td>
+          </tr>
+      </thead>
+      <tbody>
+          {% for user in user_list %}
+          <tr class="text-center">
+          <td>{{user.first_name}}</td>
+          <td>{{user.last_name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.position}}</td>
+          <td>
+              <a href="{% url 'update' user.id %}" class="btn">
+              <i class="far fa-edit fa-lg"></i>
+              </a>
+              <form
+              action="{% url 'delete' user.id %}"
+              method="post"
+              class="d-inline"
+              >
+              {% csrf_token %}
+              <button class="btn">
+                  <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+              </button>
+              </form>
+          </td>
+          </tr>
+          {% endfor %}
+      </tbody>
+      </table>
+  </div> -->
+
+{% endblock content %}
